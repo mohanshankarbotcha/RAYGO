@@ -1,0 +1,45 @@
+flowchart TD
+    subgraph ClientLayer ["Client Presentation Layer (120Hz Fluid Next.js 14)"]
+        A[Overview Dashboard\n/overview]
+        B[Opportunity Center\n/opportunities]
+        C[Experiment Tracker\n/experiments]
+        D[AI Commerce & Buyer\n/ai-commerce]
+        E[Checkout & Recovery\n/checkout]
+        F[Merchant Copilot\nDrawer & Topbar]
+        G[Agent Control Plane\n/agents & /audit]
+    end
+
+    subgraph APILayer ["API Gateway (FastAPI Python 3.11+)"]
+        H[API Routers /api/v1\n(12 Domains)]
+        I[Idempotency & Error Middleware]
+        J[Security & Header Auth]
+    end
+
+    subgraph AgentMesh ["Multi-Agent Orchestration & Governance Mesh"]
+        K[Raygo Coordinator\n(Intent Routing)]
+        L[Revenue Intelligence Agent]
+        M[Growth Strategist Agent]
+        N[Experiment Intelligence Agent]
+        O[AI Commerce & Buyer Agent]
+        P[Payment & Recovery Agent]
+        Q[Merchant Copilot Service]
+        R[Policy Guard\n(Hard Mathematical Floor)]
+        S[Approval Gateway\n(Human-in-the-Loop)]
+    end
+
+    subgraph DataIntegrity ["State, Payment & AI Authorities"]
+        T[(MongoDB / mongomock\n19 Collections Runtime DB)]
+        U[Razorpay Test Gateway\n(HMAC Signature Verification)]
+        V[Google Gemini / Deterministic Fallback]
+        W[Cryptographic Audit Ledger\n(Immutable Trace Log)]
+    end
+
+    ClientLayer -->|REST / JSON| APILayer
+    APILayer --> AgentMesh
+    AgentMesh --> R
+    R --> S
+    S --> DataIntegrity
+    P --> U
+    K --> V
+    AgentMesh --> T
+    AgentMesh --> W

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAYGO - Executive Overview</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f6f3f5",
+                      "inverse-on-surface": "#f3f0f2",
+                      "on-error-container": "#93000a",
+                      "outline": "#76777d",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "surface-dim": "#dcd9db",
+                      "outline-variant": "#c6c6cd",
+                      "on-secondary-fixed-variant": "#930013",
+                      "secondary-fixed": "#ffdad7",
+                      "primary": "#000000",
+                      "on-primary-fixed": "#131b2e",
+                      "surface": "#fcf8fa",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "on-error": "#ffffff",
+                      "secondary": "#b61722",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-bright": "#fcf8fa",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#98805d",
+                      "primary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a",
+                      "growth-green": "#10B981",
+                      "on-tertiary-fixed": "#271901",
+                      "border-subtle": "#E2E8F0",
+                      "error-container": "#ffdad6",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-primary-container": "#7c839b",
+                      "tertiary-container": "#271901",
+                      "on-surface": "#1b1b1d",
+                      "background": "#fcf8fa",
+                      "surface-variant": "#e4e2e4",
+                      "on-surface-variant": "#45464d",
+                      "tertiary-fixed": "#fcdeb5",
+                      "warning-amber": "#F59E0B",
+                      "surface-container": "#f0edef",
+                      "surface-container-highest": "#e4e2e4",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#131b2e",
+                      "on-secondary-container": "#fffbff",
+                      "reasoning-blue": "#3B82F6",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#000000",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-background": "#1b1b1d",
+                      "inverse-primary": "#bec6e0",
+                      "surface-tint": "#565e74",
+                      "inverse-surface": "#303032",
+                      "primary-fixed": "#dae2fd",
+                      "surface-container-high": "#eae7e9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "1.5rem",
+                      "stack-compact": "0.5rem",
+                      "stack-default": "1rem",
+                      "margin-mobile": "1rem",
+                      "container-max": "1440px",
+                      "section-gap": "2rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 20
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-base antialiased min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Desktop SideNavBar -->
+<nav aria-label="Main Navigation" class="w-60 h-screen fixed left-0 top-0 border-r border-border-subtle bg-surface flex flex-col py-6 px-4 gap-y-2 hidden md:flex z-40">
+<!-- Brand Area -->
+<div class="flex items-center gap-3 mb-6 px-2">
+<div class="w-8 h-8 rounded-DEFAULT bg-primary flex items-center justify-center text-on-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-sm icon-fill">storefront</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">RAYGO</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Revenue Intelligence</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-1 flex-1 overflow-y-auto">
+<!-- Active Tab -->
+<a aria-current="page" class="flex items-center gap-3 px-3 py-2 text-primary font-label-bold bg-surface-container rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">query_stats</span>
+<span>Opportunities</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">science</span>
+<span>Experiments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>AI Commerce</span>
+</a>
+<div class="h-px bg-border-subtle my-2 mx-3"></div>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">shopping_cart</span>
+<span>Orders</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span>Products</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">payments</span>
+<span>Payments</span>
+</a>
+<div class="h-px bg-border-subtle my-2 mx-3"></div>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">history</span>
+<span>Agent Activity</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">policy</span>
+<span>Policies</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>Audit Trail</span>
+</a>
+</div>
+<!-- CTA -->
+<button class="mt-auto flex items-center justify-center gap-2 w-full py-2 px-4 bg-primary text-on-primary rounded-DEFAULT font-label-bold hover:bg-primary-container hover:text-on-primary-container transition-colors active:opacity-80 duration-150">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px]">chat</span>
+            Ask RAYGO
+        </button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-60 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="h-16 sticky top-0 bg-surface/90 backdrop-blur-sm z-30 border-b border-border-subtle flex justify-between items-center px-gutter w-full transition-all duration-200 ease-in-out">
+<div class="flex items-center gap-6">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span aria-hidden="true" class="material-symbols-outlined">menu</span>
+</button>
+<h2 class="text-headline-md font-headline-md font-bold text-on-surface hidden md:block">NovaTech Store</h2>
+</div>
+<!-- Top Nav Links (Desktop) -->
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-primary border-b-2 border-primary pb-1 font-body-sm text-body-sm" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm transition-colors" href="#">Analytics</a>
+<a class="text-on-surface-variant hover:text-primary font-body-sm text-body-sm transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<!-- Search (Placeholder) -->
+<div class="hidden lg:flex items-center bg-surface-container-low rounded-DEFAULT px-3 py-1.5 border border-border-subtle focus-within:border-primary focus-within:shadow-[0_0_0_2px_rgba(15,23,42,0.1)] transition-all">
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[18px] mr-2">search</span>
+<input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant w-48" placeholder="Search insights..." type="text"/>
+</div>
+<!-- Actions -->
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span aria-hidden="true" class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full border border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hidden sm:block">
+<span aria-hidden="true" class="material-symbols-outlined">help_outline</span>
+</button>
+<!-- Profile Avatar -->
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-border-subtle overflow-hidden ml-2 cursor-pointer">
+<img alt="Merchant Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a female revenue operations manager in a well-lit modern office setting. Crisp focus, light corporate aesthetic, neutral color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoEWwmzhPVB_rUwRthdiKIxPbFRPxdh7aLVAciBhk32E_zdFt1kxYLM-T95ZiiUYvNNJSUNvV58iEwSUQAbjE_r5_ZXn6FjLGIHMdDdkhuBRMiTin0FANoMAp17e5jCdNkpUVNe2fLKT-BGsAREzjY8CJTBlV7gcEJ_AenNL7wDn_h1k9wGyMKzgHZE4VtVPEVqeNI7acEZAK8MmA6kiQuCzcfYPli0nBMm005VlgKvbGf2K7h2If2"/>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 p-gutter md:p-section-gap max-w-container-max mx-auto w-full flex flex-col gap-section-gap pb-20">
+<!-- Page Header -->
+<header>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-1">RAYGO Autonomous Revenue Intelligence</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Real-time performance and automated opportunities.</p>
+</header>
+<!-- KPI Bento Grid -->
+<section aria-label="Key Performance Indicators" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-5 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Total Revenue</span>
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[20px]">account_balance_wallet</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary font-data-mono">₹2,84,620</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-growth-green font-body-sm text-body-sm font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] icon-fill">trending_up</span>
+<span>+18.7% vs last period</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-5 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider flex items-center gap-1">
+<span aria-hidden="true" class="material-symbols-outlined text-reasoning-blue text-[16px]">auto_awesome</span>
+                            RAYGO Influenced
+                        </span>
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[20px]">insights</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary font-data-mono">₹42,800</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-growth-green font-body-sm text-body-sm font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] icon-fill">trending_up</span>
+<span>+14.2% AI Lift</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-5 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Active Opportunities</span>
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[20px]">target</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary font-data-mono">7</span>
+</div>
+<div class="mt-2 flex items-center gap-1 text-warning-amber font-body-sm text-body-sm font-medium">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] icon-fill">bolt</span>
+<span>Action required</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-5 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">AI Commerce Readiness</span>
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[20px]">speed</span>
+</div>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="font-metric-display text-metric-display text-primary font-data-mono">82</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/100</span>
+</div>
+<!-- Mini progress bar -->
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 mt-2 overflow-hidden">
+<div class="bg-growth-green h-1.5 rounded-full w-[82%]"></div>
+</div>
+</div>
+</section>
+<!-- Main Content: Opportunities & Chart Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Opportunities (Takes up 2/3 on desktop) -->
+<section class="lg:col-span-2 flex flex-col gap-4">
+<div class="flex justify-between items-end mb-2">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+                                RAYGO found 7 revenue opportunities
+                                <span class="bg-reasoning-blue/10 text-reasoning-blue px-2 py-0.5 rounded-DEFAULT font-label-bold text-[10px] uppercase">New Insights</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Top recommended actions based on real-time storefront data.</p>
+</div>
+<button class="text-primary font-label-bold text-label-bold hover:underline">View All</button>
+</div>
+<!-- Opportunity Cards List -->
+<div class="flex flex-col gap-3">
+<!-- Opportunity 1 (Highest Priority) -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] hover:border-reasoning-blue/30 transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-DEFAULT bg-reasoning-blue/10 flex items-center justify-center text-reasoning-blue shrink-0">
+<span aria-hidden="true" class="material-symbols-outlined">add_shopping_cart</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-body-base text-body-base font-semibold text-primary">Cross-sell: Mechanical Keyboard &amp; Ergonomic Stand</h3>
+<span class="px-1.5 py-0.5 bg-growth-green/10 text-growth-green rounded-DEFAULT font-label-bold text-[10px]">High Conversion</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Customers buying the Pro Mechanical Keyboard are 45% more likely to buy the Ergonomic Stand if offered at checkout.</p>
+<div class="flex items-center gap-4 font-data-mono text-body-sm">
+<div class="flex items-center gap-1 text-on-surface">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-on-surface-variant">trending_up</span>
+                                                Est. Lift: ₹12,500/mo
+                                            </div>
+<div class="flex items-center gap-1 text-on-surface">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-on-surface-variant">group</span>
+                                                Impact: ~80 orders
+                                            </div>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-primary text-on-primary font-label-bold px-4 py-1.5 rounded-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity">Deploy</button>
+</div>
+</div>
+<!-- Opportunity 2 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span aria-hidden="true" class="material-symbols-outlined">remove_shopping_cart</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-body-base text-body-base font-semibold text-primary">Optimize Abandoned Cart Recovery (Premium Tier)</h3>
+<span class="px-1.5 py-0.5 bg-warning-amber/10 text-warning-amber rounded-DEFAULT font-label-bold text-[10px]">Urgent</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Cart abandonment for orders &gt;₹10,000 spiked 12% yesterday. Recommend triggering automated SMS discount earlier.</p>
+<div class="flex items-center gap-4 font-data-mono text-body-sm">
+<div class="flex items-center gap-1 text-on-surface">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-on-surface-variant">trending_up</span>
+                                                Est. Recovery: ₹34,000
+                                            </div>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-surface-container-highest text-on-surface border border-border-subtle font-label-bold px-4 py-1.5 rounded-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-variant">Review</button>
+</div>
+</div>
+<!-- Opportunity 3 -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-all cursor-pointer group">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span aria-hidden="true" class="material-symbols-outlined">local_offer</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-body-base text-body-base font-semibold text-primary">Dynamic Pricing: Weekend Tech Sale</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Historical data suggests a 5% price drop on legacy tech accessories this weekend will clear aging inventory.</p>
+<div class="flex items-center gap-4 font-data-mono text-body-sm">
+<div class="flex items-center gap-1 text-on-surface">
+<span aria-hidden="true" class="material-symbols-outlined text-[16px] text-on-surface-variant">inventory_2</span>
+                                                Clearance: 120 units
+                                            </div>
+</div>
+</div>
+</div>
+<button class="shrink-0 bg-surface-container-highest text-on-surface border border-border-subtle font-label-bold px-4 py-1.5 rounded-DEFAULT opacity-0 group-hover:opacity-100 transition-opacity hover:bg-surface-variant">Review</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Chart & AI Insights -->
+<aside class="flex flex-col gap-6">
+<!-- Revenue Chart Area -->
+<div class="bg-surface border border-border-subtle rounded-DEFAULT p-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-label-bold text-label-bold text-primary uppercase">Revenue Trend (30 Days)</h3>
+<span aria-hidden="true" class="material-symbols-outlined text-on-surface-variant text-[18px]">more_horiz</span>
+</div>
+<!-- Pseudo-Chart Visualization -->
+<div class="h-40 w-full relative flex items-end justify-between gap-1 mt-2 px-2 border-b border-border-subtle pb-2">
+<!-- Y-axis labels -->
+<div class="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-[10px] font-data-mono text-on-surface-variant">
+<span>₹300k</span>
+<span>₹200k</span>
+<span>₹100k</span>
+</div>
+<!-- Bar Chart Placeholder elements for visual texture -->
+<div class="w-full flex justify-between items-end h-full ml-10">
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[30%]"></div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[45%]"></div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[40%]"></div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[60%]"></div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[55%]"></div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[75%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-0.5 px-1.5 rounded opacity-0 group-hover:opacity-100 font-data-mono whitespace-nowrap z-10 transition-opacity">₹24k (AI Lift)</div>
+<div class="w-full h-[20%] bg-reasoning-blue rounded-t-[2px]"></div>
+</div>
+<div class="w-1/12 bg-surface-container-highest rounded-t-[2px] h-[90%] relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-primary text-on-primary text-[10px] py-0.5 px-1.5 rounded opacity-0 group-hover:opacity-100 font-data-mono whitespace-nowrap z-10 transition-opacity">₹32k (AI Lift)</div>
+<div class="w-full h-[30%] bg-reasoning-blue rounded-t-[2px]"></div>
+</div>
+</div>
+<!-- Line overlay (SVG Placeholder) -->
+<svg class="absolute inset-0 w-full h-full ml-10 overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<path class="text-primary" d="M0,70 Q20,50 40,60 T70,30 T100,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+<!-- Highlight point -->
+<circle class="text-primary" cx="100" cy="10" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center mt-2 ml-10 text-[10px] font-data-mono text-on-surface-variant">
+<span>Mar 1</span>
+<span>Mar 15</span>
+<span>Mar 30</span>
+</div>
+<div class="mt-4 flex items-center justify-center gap-4 text-[11px] font-body-sm">
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-surface-container-highest"></span> Base Revenue</div>
+<div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-reasoning-blue"></span> AI Influenced</div>
+</div>
+</div>
+<!-- AI Insight Panel -->
+<div class="bg-reasoning-blue/5 border border-reasoning-blue/20 rounded-DEFAULT p-4 relative overflow-hidden">
+<!-- Decorative bg -->
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-reasoning-blue/10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 mb-3 relative z-10">
+<span aria-hidden="true" class="material-symbols-outlined text-reasoning-blue text-[20px]">psychology</span>
+<h3 class="font-label-bold text-label-bold text-primary">RAYGO's Latest Reasoning</h3>
+</div>
+<div class="relative z-10 font-body-sm text-body-sm text-on-surface space-y-3">
+<p><strong>Context:</strong> Analyzed 1,420 orders containing 'Pro Mechanical Keyboard' over the last 90 days.</p>
+<div class="pl-3 border-l-2 border-reasoning-blue/30 space-y-2">
+<p class="text-on-surface-variant">Found significant structural correlation (r=0.68) with 'Ergonomic Stand' purchases occurring within 48 hours.</p>
+<p class="text-on-surface-variant">Current attach rate at checkout is only 4% due to placement.</p>
+</div>
+<p><strong>Conclusion:</strong> Injecting an inline upsell during the cart summary step will likely increase stand attach rates to 18-22% based on similar historical interventions.</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</body></html>

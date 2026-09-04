@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Experiment Detail - NovaTech Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#45464d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-tint": "#565e74",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "growth-green": "#10B981",
+                      "secondary": "#b61722",
+                      "background": "#fcf8fa",
+                      "surface": "#fcf8fa",
+                      "outline-variant": "#c6c6cd",
+                      "on-background": "#1b1b1d",
+                      "warning-amber": "#F59E0B",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#303032",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "on-primary-container": "#7c839b",
+                      "surface-bright": "#fcf8fa",
+                      "outline": "#76777d",
+                      "on-primary-fixed": "#131b2e",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#000000",
+                      "reasoning-blue": "#3B82F6",
+                      "primary-fixed": "#dae2fd",
+                      "border-subtle": "#E2E8F0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed-variant": "#930013",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-tertiary-fixed": "#271901",
+                      "on-tertiary-container": "#98805d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "secondary-fixed": "#ffdad7",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "tertiary-container": "#271901",
+                      "primary-container": "#131b2e",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-default": "1rem",
+                      "stack-compact": "0.5rem",
+                      "section-gap": "2rem",
+                      "margin-mobile": "1rem",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-base font-body-base antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-full py-6 px-4 fixed left-0 top-0 h-full w-[240px] z-40 bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline flat no shadows">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">RAYGO</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Autonomous Revenue</p>
+</div>
+</div>
+<ul class="space-y-1 flex-1 font-body-base text-body-base">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Opportunities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary-container text-on-primary-container font-semibold rounded-lg hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span>Experiments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>AI Commerce</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="smart_button">smart_button</span>
+<span>Agent Activity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+<span>Policies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Audit Trail</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center h-16 px-gutter ml-[240px] fixed top-0 right-0 w-[calc(100%-240px)] z-30 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows font-body-base text-body-base">
+<div class="flex items-center gap-6">
+<h2 class="text-headline-md font-headline-md font-bold text-primary">NovaTech Store</h2>
+<nav class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-opacity Active: opacity-80 py-4" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity Active: opacity-80 py-4" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded font-label-bold text-label-bold ml-2">Execute Action</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="md:ml-[240px] md:mt-16 p-4 md:p-8 max-w-container-max mx-auto">
+<!-- Breadcrumbs & Header -->
+<div class="mb-section-gap">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm mb-stack-compact">
+<a class="hover:text-primary" href="#">Experiments</a>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium">Keyboard + Laptop Stand</span>
+</div>
+<div class="flex justify-between items-start flex-wrap gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary flex items-center gap-3">
+                        Keyboard + Laptop Stand
+                        <span class="bg-primary-fixed text-on-primary-fixed-variant px-2 py-1 rounded font-label-bold text-label-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="sync" data-weight="fill" style="font-variation-settings: 'FILL' 1;">sync</span> Running
+                        </span>
+</h2>
+<p class="font-body-base text-body-base text-on-surface-variant mt-2 max-w-3xl">
+                        Hypothesis: Bundling a Laptop Stand with Wireless Keyboard purchases will increase basket conversion without reducing merchant margin below policy.
+                    </p>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded flex items-center gap-2 font-label-bold text-label-bold shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]" data-icon="rocket_launch">rocket_launch</span>
+                    Scale Experiment
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-default">
+<!-- Left Column: Results & AI Rec -->
+<div class="lg:col-span-4 flex flex-col gap-stack-default">
+<!-- Results Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-default flex items-center gap-2">
+<span class="material-symbols-outlined text-growth-green" data-icon="trending_up">trending_up</span> Results Summary
+                    </h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-border-subtle pb-2">
+<span class="font-body-base text-body-base text-on-surface-variant">Conversion Uplift</span>
+<span class="font-data-mono text-data-mono text-growth-green font-bold">+43.5%</span>
+</div>
+<div class="flex justify-between items-center border-b border-border-subtle pb-2">
+<span class="font-body-base text-body-base text-on-surface-variant">Revenue Uplift</span>
+<span class="font-data-mono text-data-mono text-growth-green font-bold">+23.4%</span>
+</div>
+<div class="flex justify-between items-center border-b border-border-subtle pb-2">
+<span class="font-body-base text-body-base text-on-surface-variant">AOV</span>
+<span class="font-data-mono text-data-mono text-growth-green font-bold">+8.7%</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-base text-body-base text-on-surface-variant flex items-center gap-1">
+                                Statistical Confidence
+                                <span class="material-symbols-outlined text-[14px] text-outline" data-icon="info">info</span>
+</span>
+<span class="font-data-mono text-data-mono text-primary font-bold">94%</span>
+</div>
+</div>
+</div>
+<!-- AI Recommendation -->
+<div class="bg-[rgba(59,130,246,0.05)] border border-reasoning-blue/20 rounded-xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-reasoning-blue/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
+<h3 class="font-label-bold text-label-bold text-reasoning-blue uppercase tracking-wider mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="smart_toy">smart_toy</span> RAYGO Recommendation
+                    </h3>
+<p class="font-headline-md text-headline-md text-primary font-bold mb-2">SCALE VARIANT</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Performance significantly exceeds control while remaining well within margin policy constraints. Immediate scaling is recommended to capture revenue upside.
+                    </p>
+</div>
+</div>
+<!-- Right Column: Experiment Design (Control vs Variant) -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-border-subtle rounded-xl p-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-stack-default flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="compare">compare</span> Experiment Design
+                </h3>
+<div class="grid md:grid-cols-2 gap-6 relative">
+<!-- VS Divider -->
+<div class="hidden md:flex absolute inset-y-0 left-1/2 -ml-4 items-center justify-center pointer-events-none">
+<div class="bg-surface-container-highest rounded-full w-8 h-8 flex items-center justify-center font-label-bold text-label-bold text-on-surface-variant border-4 border-surface-container-lowest z-10">VS</div>
+<div class="absolute inset-y-0 w-px bg-border-subtle"></div>
+</div>
+<!-- Control -->
+<div class="bg-surface-muted rounded-lg p-5 border border-transparent hover:border-border-subtle transition-colors">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-surface-container-highest text-on-surface-variant px-2 py-1 rounded font-label-bold text-label-bold">CONTROL A</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">6.2% Conv.</span>
+</div>
+<div class="flex gap-4 items-center mb-4">
+<div class="w-16 h-16 bg-white border border-border-subtle rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[32px] text-outline" data-icon="keyboard">keyboard</span>
+</div>
+<div>
+<p class="font-body-base text-body-base font-semibold text-primary">Keyboard Only</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standard product detail page</p>
+</div>
+</div>
+<div class="space-y-2 font-data-mono text-data-mono text-sm border-t border-border-subtle pt-4">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Price</span>
+<span>$129.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Margin</span>
+<span>42%</span>
+</div>
+</div>
+</div>
+<!-- Variant -->
+<div class="bg-surface-bright rounded-lg p-5 border-2 border-primary/10 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-full h-1 bg-growth-green"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="bg-primary-container text-on-primary-container px-2 py-1 rounded font-label-bold text-label-bold">VARIANT B</span>
+<span class="font-data-mono text-data-mono text-growth-green font-bold">8.9% Conv.</span>
+</div>
+<div class="flex gap-4 items-center mb-4">
+<div class="w-16 h-16 bg-white border border-border-subtle rounded flex items-center justify-center">
+<div class="flex">
+<span class="material-symbols-outlined text-[24px] text-primary" data-icon="keyboard">keyboard</span>
+<span class="material-symbols-outlined text-[24px] text-primary -ml-2 mt-2" data-icon="laptop_windows">laptop_windows</span>
+</div>
+</div>
+<div>
+<p class="font-body-base text-body-base font-semibold text-primary">Keyboard + Stand</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dynamic bundle offer on PDP</p>
+</div>
+</div>
+<div class="space-y-2 font-data-mono text-data-mono text-sm border-t border-border-subtle pt-4">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Bundle Price</span>
+<span>$165.00</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Blended Margin</span>
+<span class="text-primary font-medium">38% <span class="text-growth-green ml-1">(Policy &gt;35%)</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

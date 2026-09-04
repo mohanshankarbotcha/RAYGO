@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAYGO - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f6f3f5",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-error-container": "#93000a",
+                        "outline": "#76777d",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "surface-dim": "#dcd9db",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed-variant": "#930013",
+                        "secondary-fixed": "#ffdad7",
+                        "primary": "#000000",
+                        "on-primary-fixed": "#131b2e",
+                        "surface": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-error": "#ffffff",
+                        "secondary": "#b61722",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-bright": "#fcf8fa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#98805d",
+                        "primary-fixed-dim": "#bec6e0",
+                        "error": "#ba1a1a",
+                        "growth-green": "#10B981",
+                        "on-tertiary-fixed": "#271901",
+                        "border-subtle": "#E2E8F0",
+                        "error-container": "#ffdad6",
+                        "surface-muted": "#F8FAFC",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#da3437",
+                        "on-secondary-fixed": "#410004",
+                        "on-primary-container": "#7c839b",
+                        "tertiary-container": "#271901",
+                        "on-surface": "#1b1b1d",
+                        "background": "#fcf8fa",
+                        "surface-variant": "#e4e2e4",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed": "#fcdeb5",
+                        "warning-amber": "#F59E0B",
+                        "surface-container": "#f0edef",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "on-secondary-container": "#fffbff",
+                        "reasoning-blue": "#3B82F6",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#000000",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-background": "#1b1b1d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-tint": "#565e74",
+                        "inverse-surface": "#303032",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-high": "#eae7e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "stack-compact": "0.5rem",
+                        "stack-default": "1rem",
+                        "margin-mobile": "1rem",
+                        "container-max": "1440px",
+                        "section-gap": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter", "sans-serif"],
+                        "metric-display": ["Inter", "sans-serif"],
+                        "label-bold": ["Inter", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "data-mono": ["Inter", "monospace"]
+                    },
+                    "fontSize": {
+                        "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "metric-display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex items-center justify-center font-body-base antialiased">
+<!-- Container for Onboarding -->
+<div class="max-w-[1024px] w-full mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[600px]">
+<!-- Left Side: Brand & Value Prop -->
+<div class="flex flex-col gap-6 justify-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">
+                    auto_awesome
+                </span>
+<span class="font-headline-lg text-headline-lg tracking-tight">RAYGO</span>
+</div>
+<h1 class="font-metric-display text-metric-display text-on-surface mt-4 max-w-sm">
+                Turn commerce data into autonomous growth.
+            </h1>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-md">
+                Connect your store and let our intelligence engine optimize your revenue streams automatically.
+            </p>
+</div>
+<!-- Right Side: Setup Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-8 shadow-sm flex flex-col gap-8 relative overflow-hidden">
+<!-- Decorative accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary"></div>
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Store Configuration</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Review your connected store details.</p>
+</div>
+<!-- Store Details -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between py-3 border-b border-border-subtle">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Store Name</span>
+<span class="font-label-bold text-label-bold text-on-surface">NovaTech Store</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-border-subtle">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Category</span>
+<span class="font-body-sm text-body-sm text-on-surface">Consumer Electronics</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-border-subtle">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Est. Revenue</span>
+<span class="font-data-mono text-data-mono text-on-surface">₹2L - ₹5L</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-border-subtle">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Products</span>
+<span class="font-data-mono text-data-mono text-on-surface">50+</span>
+</div>
+</div>
+<!-- Action -->
+<button class="w-full bg-primary text-on-primary font-label-bold text-label-bold py-3 rounded hover:bg-opacity-90 transition-opacity flex items-center justify-center gap-2">
+                Initialize RAYGO
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<div class="flex items-center gap-2 justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-body-sm text-body-sm">Secure connection established</span>
+</div>
+</div>
+</div>
+</body></html>

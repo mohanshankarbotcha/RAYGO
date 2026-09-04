@@ -1,0 +1,14 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+motor==3.5.1
+pymongo==4.8.0
+pydantic==2.13.5
+pydantic-settings==2.5.2
+razorpay==1.4.2
+google-genai==2.21.0
+python-dotenv==1.0.1
+httpx==0.28.1
+pytest==8.3.3
+pytest-asyncio==0.24.0
+mongomock-motor==0.0.34
+setuptools<81

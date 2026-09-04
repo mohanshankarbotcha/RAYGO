@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Commerce - RAYGO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#45464d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-tint": "#565e74",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "growth-green": "#10B981",
+                      "secondary": "#b61722",
+                      "background": "#fcf8fa",
+                      "surface": "#fcf8fa",
+                      "outline-variant": "#c6c6cd",
+                      "on-background": "#1b1b1d",
+                      "warning-amber": "#F59E0B",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#303032",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "on-primary-container": "#7c839b",
+                      "surface-bright": "#fcf8fa",
+                      "outline": "#76777d",
+                      "on-primary-fixed": "#131b2e",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#000000",
+                      "reasoning-blue": "#3B82F6",
+                      "primary-fixed": "#dae2fd",
+                      "border-subtle": "#E2E8F0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed-variant": "#930013",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-tertiary-fixed": "#271901",
+                      "on-tertiary-container": "#98805d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "secondary-fixed": "#ffdad7",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "tertiary-container": "#271901",
+                      "primary-container": "#131b2e",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-default": "1rem",
+                      "stack-compact": "0.5rem",
+                      "section-gap": "2rem",
+                      "margin-mobile": "1rem",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-base text-body-base h-full overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface fixed left-0 top-0 h-full w-[240px] z-40 border-r border-outline-variant dark:border-outline flat no shadows hidden md:flex flex-col py-6 px-4">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-xl" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">RAYGO</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Autonomous Revenue</p>
+</div>
+</div>
+<ul class="flex flex-col gap-1 space-y-1 mt-4">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-base text-body-base">Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-body-base text-body-base">Opportunities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span class="font-body-base text-body-base">Experiments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary-container text-on-primary-container font-semibold rounded-lg Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-body-base text-body-base font-semibold">AI Commerce</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-body-base text-body-base">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-base text-body-base">Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-base text-body-base">Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="smart_button">smart_button</span>
+<span class="font-body-base text-body-base">Agent Activity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+<span class="font-body-base text-body-base">Policies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 Active: scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-body-base text-body-base">Audit Trail</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim fixed top-0 right-0 w-full md:w-[calc(100%-240px)] z-30 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center h-16 px-gutter ml-0 md:ml-[240px]">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="text-headline-md font-headline-md font-bold text-primary">NovaTech Store</div>
+<nav class="hidden lg:flex ml-8 gap-6 h-full">
+<a class="flex items-center text-on-surface-variant hover:text-primary transition-opacity h-full" href="#">Dashboard</a>
+<a class="flex items-center text-on-surface-variant hover:text-primary transition-opacity h-full" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-lowest border border-border-subtle rounded text-body-sm font-body-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/10 w-64 transition-all" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-opacity Active: opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity Active: opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-2 rounded hover:bg-primary/90 transition-colors hidden sm:block">Execute Action</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 ml-0 md:ml-[240px] mt-16 p-4 sm:p-6 lg:p-8 overflow-y-auto w-full max-w-container-max mx-auto bg-surface">
+<!-- Header Section -->
+<div class="mb-section-gap">
+<h1 class="text-headline-lg font-headline-lg font-bold text-primary tracking-tight">AI Commerce</h1>
+<p class="text-body-base font-body-base text-on-surface-variant mt-2 max-w-3xl">Make your store discoverable, understandable and transactable by AI buyers.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Readiness & Blockers (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Hero Score Bento Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 relative overflow-hidden group hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<!-- Subtle background decoration -->
+<div class="absolute right-0 top-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="radar">radar</span>
+<span class="text-label-bold font-label-bold text-on-surface-variant uppercase tracking-wider">AI Commerce Readiness</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-metric-display font-metric-display font-semibold text-primary">82</span>
+<span class="text-body-base font-body-base text-on-surface-variant">/100</span>
+</div>
+<div class="mt-4 inline-flex items-center gap-2 bg-warning-amber/10 text-warning-amber px-3 py-1.5 rounded text-label-bold font-label-bold">
+<span class="material-symbols-outlined text-[16px]" data-icon="warning">warning</span>
+                            Good readiness — 3 areas need attention.
+                        </div>
+</div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors w-full sm:w-auto flex-shrink-0 z-10">
+                        Optimize Catalog
+                    </button>
+</div>
+<!-- Breakdown Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Discoverability -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Product Discoverability</span>
+<span class="text-data-mono font-data-mono text-growth-green">91</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-growth-green h-full rounded-full" style="width: 91%"></div>
+</div>
+</div>
+<!-- Structured Data -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Structured Product Data</span>
+<span class="text-data-mono font-data-mono text-primary">82</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Pricing Clarity -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Pricing Clarity</span>
+<span class="text-data-mono font-data-mono text-growth-green">94</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-growth-green h-full rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Inventory Confidence -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow ring-1 ring-warning-amber/30">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Inventory Confidence</span>
+<span class="text-data-mono font-data-mono text-warning-amber">63</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-warning-amber h-full rounded-full" style="width: 63%"></div>
+</div>
+</div>
+<!-- Policy Clarity -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow ring-1 ring-warning-amber/30">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Policy Clarity</span>
+<span class="text-data-mono font-data-mono text-warning-amber">72</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-warning-amber h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Checkout Readiness -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 flex flex-col justify-between hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<span class="text-body-sm font-body-sm font-medium text-on-surface">Checkout Readiness</span>
+<span class="text-data-mono font-data-mono text-primary">76</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 76%"></div>
+</div>
+</div>
+</div>
+<!-- Blockers List -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-6 hover:shadow-[0px_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<h3 class="text-headline-md font-headline-md font-semibold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-warning-amber" data-icon="block">block</span>
+                        AI Buyer Blockers
+                    </h3>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3 p-3 bg-surface-muted border border-border-subtle rounded">
+<span class="material-symbols-outlined text-error mt-0.5 text-lg" data-icon="error">error</span>
+<div>
+<p class="text-body-sm font-body-sm font-medium text-on-surface">14 products have stale inventory data</p>
+<a class="text-label-bold font-label-bold text-reasoning-blue hover:underline mt-1 inline-block" href="#">Review Inventory Sync</a>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-surface-muted border border-border-subtle rounded">
+<span class="material-symbols-outlined text-warning-amber mt-0.5 text-lg" data-icon="local_shipping">local_shipping</span>
+<div>
+<p class="text-body-sm font-body-sm font-medium text-on-surface">37 products lack structured shipping information</p>
+<a class="text-label-bold font-label-bold text-reasoning-blue hover:underline mt-1 inline-block" href="#">Update Shipping Profiles</a>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 bg-surface-muted border border-border-subtle rounded">
+<span class="material-symbols-outlined text-warning-amber mt-0.5 text-lg" data-icon="data_object">data_object</span>
+<div>
+<p class="text-body-sm font-body-sm font-medium text-on-surface">8 products have ambiguous product attributes</p>
+<a class="text-label-bold font-label-bold text-reasoning-blue hover:underline mt-1 inline-block" href="#">Fix Attributes</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Preview (4 cols) -->
+<div class="lg:col-span-4">
+<div class="bg-reasoning-blue/5 border border-reasoning-blue/20 rounded-xl p-6 h-full flex flex-col relative overflow-hidden">
+<div class="flex items-center gap-2 mb-6 text-reasoning-blue">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<h3 class="text-label-bold font-label-bold uppercase tracking-wider">AI-Readable Product Profile</h3>
+</div>
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 mb-4 shadow-sm relative z-10">
+<div class="flex justify-between items-start mb-2">
+<h4 class="text-headline-md font-headline-md font-bold text-primary">ProBook 14</h4>
+<span class="bg-growth-green/10 text-growth-green px-2 py-1 rounded text-[10px] font-label-bold font-semibold">In stock</span>
+</div>
+<div class="text-metric-display font-metric-display font-semibold text-primary mb-4">₹62,999</div>
+<div class="space-y-3">
+<div class="flex justify-between border-b border-border-subtle pb-2">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Category</span>
+<span class="text-data-mono font-data-mono text-on-surface">Laptop</span>
+</div>
+<div class="flex justify-between border-b border-border-subtle pb-2">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Best For</span>
+<span class="text-data-mono font-data-mono text-on-surface text-right max-w-[60%]">AI development, coding, college</span>
+</div>
+</div>
+</div>
+<!-- Code block representation of structured data -->
+<div class="mt-auto bg-[#1e293b] rounded-lg p-4 text-[11px] font-data-mono text-[#e2e8f0] overflow-x-auto relative z-10">
+<pre><code>{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "ProBook 14",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "62999",
+    "availability": "InStock"
+  },
+  "audience": [
+    "AI developer", 
+    "Student"
+  ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

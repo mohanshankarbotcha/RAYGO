@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agent Activity - RAYGO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#45464d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-tint": "#565e74",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "growth-green": "#10B981",
+                      "secondary": "#b61722",
+                      "background": "#fcf8fa",
+                      "surface": "#fcf8fa",
+                      "outline-variant": "#c6c6cd",
+                      "on-background": "#1b1b1d",
+                      "warning-amber": "#F59E0B",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#303032",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "on-primary-container": "#7c839b",
+                      "surface-bright": "#fcf8fa",
+                      "outline": "#76777d",
+                      "on-primary-fixed": "#131b2e",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#000000",
+                      "reasoning-blue": "#3B82F6",
+                      "primary-fixed": "#dae2fd",
+                      "border-subtle": "#E2E8F0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed-variant": "#930013",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-tertiary-fixed": "#271901",
+                      "on-tertiary-container": "#98805d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "secondary-fixed": "#ffdad7",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "tertiary-container": "#271901",
+                      "primary-container": "#131b2e",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-default": "1rem",
+                      "stack-compact": "0.5rem",
+                      "section-gap": "2rem",
+                      "margin-mobile": "1rem",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface h-full flex overflow-hidden font-body-base text-body-base">
+<!-- SideNavBar -->
+<nav class="hidden md:flex bg-surface-container-lowest dark:bg-inverse-surface fixed left-0 top-0 h-full w-[240px] z-40 border-r border-outline-variant dark:border-outline flex-col py-6 px-4">
+<div class="mb-8 px-4">
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary">RAYGO</h1>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Autonomous Revenue</p>
+</div>
+<ul class="flex-1 space-y-2">
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Opportunities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span>Experiments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span>AI Commerce</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span>Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span>Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 bg-primary-container text-on-primary-container font-semibold rounded-lg scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="smart_button" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smart_button</span>
+<span>Agent Activity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+<span>Policies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Audit Trail</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopNavBar -->
+<header class="hidden md:flex bg-surface dark:bg-surface-dim fixed top-0 right-0 w-[calc(100%-240px)] z-30 border-b border-outline-variant dark:border-outline h-16 px-gutter ml-[240px] justify-between items-center">
+<div class="flex items-center">
+<span class="text-headline-md font-headline-md font-bold text-primary mr-8">NovaTech Store</span>
+<div class="flex space-x-6">
+<a class="text-on-surface-variant hover:text-primary transition-opacity py-5" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity py-5" href="#">Settings</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-DEFAULT font-label-bold text-label-bold hover:bg-primary/90 transition-colors">Execute Action</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-opacity">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto w-full md:ml-[240px] mt-16 p-gutter bg-background">
+<div class="max-w-container-max mx-auto">
+<div class="mb-section-gap">
+<h2 class="text-headline-lg font-headline-lg text-primary">Agent Activity</h2>
+<p class="text-body-base font-body-base text-on-surface-variant mt-stack-compact">Observe what RAYGO's agents are doing across your commerce system.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Agent Status Cards (Left Column) -->
+<div class="lg:col-span-8 flex flex-col gap-stack-default">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-stack-default">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue">analytics</span>
+<h3 class="font-label-bold text-label-bold text-primary">Revenue Intelligence</h3>
+</div>
+<span class="bg-growth-green/10 text-growth-green px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Monitoring cross-sell opportunities.</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue">smart_toy</span>
+<h3 class="font-label-bold text-label-bold text-primary">AI Commerce</h3>
+</div>
+<span class="bg-growth-green/10 text-growth-green px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Managing product configurations.</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue">trending_up</span>
+<h3 class="font-label-bold text-label-bold text-primary">Growth Strategist</h3>
+</div>
+<span class="bg-growth-green/10 text-growth-green px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Generating conversion hypotheses.</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-warning-amber">science</span>
+<h3 class="font-label-bold text-label-bold text-primary">Experiment Agent</h3>
+</div>
+<span class="bg-warning-amber/10 text-warning-amber px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Running</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Executing active A/B tests.</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue">shield</span>
+<h3 class="font-label-bold text-label-bold text-primary">Policy Guard</h3>
+</div>
+<span class="bg-growth-green/10 text-growth-green px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Active</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Enforcing business rules.</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-lg p-4 hover:shadow-[0_4px_12px_rgba(15,23,42,0.05)] transition-shadow">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+<h3 class="font-label-bold text-label-bold text-primary">Payment Agent</h3>
+</div>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">Ready</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface-variant">Awaiting transaction requests.</div>
+</div>
+</div>
+</div>
+<!-- Live Activity Timeline (Right Column) -->
+<div class="lg:col-span-4 bg-surface-container-lowest border border-border-subtle rounded-lg p-6 h-[600px] flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-growth-green animate-pulse"></span>
+                        Live Activity Stream
+                    </h3>
+<div class="flex-1 overflow-y-auto pr-2 relative">
+<!-- Timeline Line -->
+<div class="absolute left-[27px] top-4 bottom-0 w-px bg-border-subtle"></div>
+<div class="space-y-6 relative">
+<!-- Event 1 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-reasoning-blue/10 border border-reasoning-blue/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-reasoning-blue">analytics</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:04</span>
+<span class="font-label-bold text-label-bold text-primary">Revenue Intelligence</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface bg-reasoning-blue/5 p-2 rounded border border-reasoning-blue/10 inline-block">
+                                        Detected cross-sell opportunity for Product XYZ.
+                                    </div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-reasoning-blue/10 border border-reasoning-blue/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-reasoning-blue">trending_up</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:05</span>
+<span class="font-label-bold text-label-bold text-primary">Growth Strategist</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">Generated hypothesis for increased cart value.</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-growth-green/10 border border-growth-green/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-growth-green">check_circle</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:06</span>
+<span class="font-label-bold text-label-bold text-primary">Policy Guard</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">Policy check passed. Within margin guidelines.</div>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-surface-variant border border-outline-variant flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">verified_user</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:07</span>
+<span class="font-label-bold text-label-bold text-primary">Approval Gateway</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">Merchant approval received automatically.</div>
+</div>
+</div>
+<!-- Event 5 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-warning-amber/10 border border-warning-amber/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-warning-amber">science</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:08</span>
+<span class="font-label-bold text-label-bold text-primary">Experiment Agent</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">Experiment created and deployed to 10% traffic.</div>
+</div>
+</div>
+<!-- Event 6 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-error/10 border border-error/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-error">error</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:12</span>
+<span class="font-label-bold text-label-bold text-primary">Payment Agent</span>
+</div>
+<div class="text-body-sm font-body-sm text-error bg-error/5 p-2 rounded border border-error/10 inline-block">
+                                        Payment attempt failed for Order #8892.
+                                    </div>
+</div>
+</div>
+<!-- Event 7 -->
+<div class="flex gap-4 relative">
+<div class="w-6 h-6 rounded-full bg-error/10 border border-error/30 flex items-center justify-center shrink-0 mt-0.5 z-10">
+<span class="material-symbols-outlined text-[14px] text-error">block</span>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">11:32:12</span>
+<span class="font-label-bold text-label-bold text-primary">Policy Guard</span>
+</div>
+<div class="text-body-sm font-body-sm text-on-surface">Automatic retry blocked due to fraud risk score.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

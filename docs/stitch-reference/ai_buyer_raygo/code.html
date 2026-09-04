@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAYGO AI Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#45464d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-tint": "#565e74",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "growth-green": "#10B981",
+                      "secondary": "#b61722",
+                      "background": "#fcf8fa",
+                      "surface": "#fcf8fa",
+                      "outline-variant": "#c6c6cd",
+                      "on-background": "#1b1b1d",
+                      "warning-amber": "#F59E0B",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#303032",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "on-primary-container": "#7c839b",
+                      "surface-bright": "#fcf8fa",
+                      "outline": "#76777d",
+                      "on-primary-fixed": "#131b2e",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#000000",
+                      "reasoning-blue": "#3B82F6",
+                      "primary-fixed": "#dae2fd",
+                      "border-subtle": "#E2E8F0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed-variant": "#930013",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-tertiary-fixed": "#271901",
+                      "on-tertiary-container": "#98805d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "secondary-fixed": "#ffdad7",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "tertiary-container": "#271901",
+                      "primary-container": "#131b2e",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-default": "1rem",
+                      "stack-compact": "0.5rem",
+                      "section-gap": "2rem",
+                      "margin-mobile": "1rem",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-base antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- Top Navigation (Reduced Shell for focused interaction) -->
+<header class="bg-surface-container-lowest border-b border-border-subtle h-16 flex items-center px-gutter justify-between shrink-0 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">smart_toy</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">RAYGO AI Commerce</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-high">
+<span class="material-symbols-outlined">shopping_basket</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-bold text-label-bold ml-2">
+                US
+            </div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col items-center py-section-gap px-gutter max-w-container-max mx-auto w-full gap-section-gap">
+<!-- Search Intent Section -->
+<section class="w-full max-w-3xl flex flex-col gap-stack-default animate-[fade-in-up_0.5s_ease-out]">
+<h2 class="font-metric-display text-metric-display text-center text-primary">Tell me what you're looking for.</h2>
+<div class="relative w-full bg-surface-container-lowest border border-border-subtle rounded-xl shadow-sm focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all overflow-hidden flex flex-col group">
+<textarea class="w-full bg-transparent border-none resize-none p-6 pb-16 font-body-base text-body-base focus:ring-0 text-on-surface placeholder-on-surface-variant h-32" placeholder="Describe the product, purpose, budget, and any constraints...">I need a laptop setup for AI development and college under ₹70,000.</textarea>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors text-body-sm font-body-sm border border-border-subtle">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+                        Voice input
+                    </button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors text-body-sm font-body-sm border border-border-subtle">
+<span class="material-symbols-outlined text-[16px]">image</span>
+                        Image search
+                    </button>
+</div>
+<div class="absolute bottom-4 right-4">
+<button class="bg-primary text-on-primary hover:opacity-90 px-6 py-2.5 rounded-lg font-label-bold text-label-bold flex items-center gap-2 transition-opacity shadow-sm">
+                        Find Products
+                        <span class="material-symbols-outlined text-[18px]">search</span>
+</button>
+</div>
+</div>
+</section>
+<!-- AI Response & Results Section -->
+<section class="w-full max-w-5xl flex flex-col gap-stack-default mt-8">
+<!-- Reasoning / Response Pill -->
+<div class="bg-[rgba(59,130,246,0.05)] border border-[rgba(59,130,246,0.2)] rounded-lg p-4 flex items-start gap-4 mb-4">
+<div class="shrink-0 text-reasoning-blue mt-0.5">
+<span class="material-symbols-outlined" data-weight="fill">auto_awesome</span>
+</div>
+<div>
+<p class="font-body-base text-body-base text-on-surface">
+                        I found 3 options matching your budget (₹70,000), workload (AI development/College), and availability. The primary recommendation maximizes RAM for local model testing while staying portable for campus use.
+                    </p>
+</div>
+</div>
+<!-- Bento Grid Layout for Results -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+<!-- Primary Recommendation Card (Spans 8 cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl border border-border-subtle shadow-sm overflow-hidden flex flex-col h-full group hover:shadow-md transition-shadow">
+<!-- Top Ribbon -->
+<div class="bg-primary-container px-4 py-2 flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-primary-container">
+<span class="material-symbols-outlined text-[16px]">star</span>
+<span class="font-label-bold text-label-bold uppercase tracking-wider">Top Match</span>
+</div>
+<span class="font-data-mono text-data-mono text-on-primary-container bg-[rgba(255,255,255,0.2)] px-2 py-0.5 rounded">98% Fit</span>
+</div>
+<div class="p-6 flex flex-col md:flex-row gap-6 h-full">
+<!-- Product Image Area -->
+<div class="w-full md:w-1/3 flex-shrink-0 bg-surface-muted rounded-lg border border-border-subtle aspect-square flex items-center justify-center relative overflow-hidden">
+<img class="object-cover w-full h-full mix-blend-multiply" data-alt="A sleek, modern silver laptop shown slightly open against a pure white background. The lighting is crisp and even, highlighting the premium metallic finish, thin bezels, and professional aesthetic suitable for a high-end fintech or corporate tool interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1F_KptjA0_862mPJAq9Ue5vbaTBjlMosM5YoQ3fq0I5oFr63RzMai3qVmo-3cl-dQfJHSwGxn2Xkg5FrN1_4U8zQzYEOHnhyeKJmgrJpDe7rddJrrThklPZnPPlpkCHAuIgccagDfYQRpgql0YxU_RFc0wJLbkmS5jo7L4RIWMyu7eFfVNloJke0gWYhF4HTv90Nx4QntkYNGI3gvAmM6uEaqZjqf-nDHbFBs3Vaqz8bb5awG56qI"/>
+</div>
+<!-- Product Details -->
+<div class="flex flex-col flex-1 justify-between gap-4">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-lg text-headline-lg text-primary leading-tight">ProBook 14 Gen 6</h3>
+<div class="text-right">
+<span class="block font-headline-lg text-headline-lg text-primary">₹62,999</span>
+<span class="font-body-sm text-body-sm text-growth-green flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                                            In Stock
+                                        </span>
+</div>
+</div>
+<p class="font-body-base text-body-base text-on-surface-variant mb-4">
+                                    'Best balance for AI development and portability.' Features sufficient RAM for local inferencing and a durable chassis for college life.
+                                </p>
+<!-- Specs Grid -->
+<div class="grid grid-cols-2 gap-3 mb-6">
+<div class="bg-surface-muted p-2 rounded border border-border-subtle flex flex-col">
+<span class="font-label-bold text-label-bold text-on-surface-variant mb-1">Processor</span>
+<span class="font-data-mono text-data-mono text-on-surface">Core Ultra 5 125H</span>
+</div>
+<div class="bg-surface-muted p-2 rounded border border-border-subtle flex flex-col">
+<span class="font-label-bold text-label-bold text-on-surface-variant mb-1">Memory</span>
+<span class="font-data-mono text-data-mono text-on-surface">16GB LPDDR5x</span>
+</div>
+<div class="bg-surface-muted p-2 rounded border border-border-subtle flex flex-col">
+<span class="font-label-bold text-label-bold text-on-surface-variant mb-1">Storage</span>
+<span class="font-data-mono text-data-mono text-on-surface">512GB PCIe Gen4</span>
+</div>
+<div class="bg-surface-muted p-2 rounded border border-border-subtle flex flex-col">
+<span class="font-label-bold text-label-bold text-on-surface-variant mb-1">Weight</span>
+<span class="font-data-mono text-data-mono text-on-surface">1.35 kg</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-3 mt-auto pt-4 border-t border-border-subtle">
+<button class="flex-1 bg-primary text-on-primary hover:opacity-90 py-2.5 rounded font-label-bold text-label-bold transition-opacity text-center">
+                                    Add to Basket
+                                </button>
+<button class="flex-1 bg-transparent border border-outline text-on-surface hover:bg-surface-muted py-2.5 rounded font-label-bold text-label-bold transition-colors text-center">
+                                    Compare Specs
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Explanation Panel (Spans 4 cols) -->
+<div class="md:col-span-4 bg-surface-muted rounded-xl border border-border-subtle shadow-sm p-6 h-full flex flex-col gap-4">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest border-b border-border-subtle pb-2 mb-2">WHY RAYGO SELECTED THIS</h4>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green text-[20px] shrink-0">check_circle</span>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface">Budget Constraint</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-0.5">₹7,001 under your ₹70,000 maximum.</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green text-[20px] shrink-0">check_circle</span>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface">Memory Requirements</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-0.5">16GB RAM is baseline for local AI development.</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green text-[20px] shrink-0">check_circle</span>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface">College Suitability</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-0.5">Lightweight (1.35kg) with 10+ hour battery life.</span>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-growth-green text-[20px] shrink-0">check_circle</span>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface">Immediate Stock</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-0.5">Available for dispatch today.</span>
+</div>
+</li>
+<li class="flex items-start gap-3 pt-3 mt-1 border-t border-border-subtle">
+<span class="material-symbols-outlined text-reasoning-blue text-[20px] shrink-0">support_agent</span>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface">AI Checkout Support</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-0.5">Eligible for automated corporate/student discount application.</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Secondary Options List (Compact view) -->
+<div class="mt-4 border border-border-subtle bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="bg-surface-muted px-4 py-3 border-b border-border-subtle">
+<h4 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest">Other Valid Options</h4>
+</div>
+<div class="divide-y divide-border-subtle">
+<!-- Option 2 -->
+<div class="p-4 flex items-center justify-between hover:bg-surface-muted transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface rounded border border-border-subtle flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover p-1" data-alt="A small thumbnail image of a sleek dark grey laptop viewed from the top down. The design is modern, professional, and well-lit with high contrast suitable for a corporate fintech interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL5-x84-fy2ueFwe0xUb5GhR_-murkQ4VbPxga0h-zM9onpi_Tt0-qX3sr8HAIfTVNhQKJhpIu3MavgITKEPjRzPLOjNvMH0mwaClH1O0_hzGAIZ9XqMfNxafrHiAAHQm7964D7wxGeLoSbjJeNeXim6buampOL_P8uuk5qeCFxXsYoykfwwzuwwoeOZ74VpeGsKq5oyeTPKoNqW9JWdkedjs-3WUpgXx-d_DxtQ9LU2o28NhNflWP"/>
+</div>
+<div>
+<h5 class="font-body-base text-body-base text-primary font-medium">IdeaPad Slim 5</h5>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">Ryzen 7, 16GB, 512GB</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-bold text-label-bold text-warning-amber">Alternative Processor</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-data-mono text-data-mono font-medium text-primary">₹65,490</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-reasoning-blue font-label-bold text-label-bold">View</button>
+</div>
+</div>
+<!-- Option 3 -->
+<div class="p-4 flex items-center justify-between hover:bg-surface-muted transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface rounded border border-border-subtle flex-shrink-0 flex items-center justify-center">
+<img class="w-full h-full object-cover p-1" data-alt="A small thumbnail image of a sturdy black gaming/creator laptop. The design emphasizes performance and durability, lit with bright, neutral lighting against a white background to fit a professional layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Biu2dIl-Q9Eojf8NSJuI-XrEau40QGdbH4-NgX2eSslYOU0eVd9F8RNLqNzJRvy9BqFzUcIBEDD0U5ufeZ_IsrK_jDjSVyNPm2cvvdTd596oENa5Wf4tPONOxE-e9fG7n3cOjwJ_WKYxQq03_yi4S7owugAERb4Eiq1byB1T5XN08qmpfMrsOHp7yK6vRwzUmefEmcvbj7nYmPMzv3g7gaIKcRZVeq1q93TQ_Ad-am2VXrbx8YFC"/>
+</div>
+<div>
+<h5 class="font-body-base text-body-base text-primary font-medium">TUF Gaming A15</h5>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-data-mono text-data-mono text-on-surface-variant">RTX 3050, 16GB, 512GB</span>
+<span class="text-on-surface-variant text-[10px]">•</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant">Better AI training (GPU), heavier.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-data-mono text-data-mono font-medium text-primary">₹69,990</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-reasoning-blue font-label-bold text-label-bold">View</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<style>
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body></html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Audit Trail - RAYGO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-surface-variant": "#45464d",
+                      "inverse-on-surface": "#f3f0f2",
+                      "surface-tint": "#565e74",
+                      "error": "#ba1a1a",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#fffbff",
+                      "growth-green": "#10B981",
+                      "secondary": "#b61722",
+                      "background": "#fcf8fa",
+                      "surface": "#fcf8fa",
+                      "outline-variant": "#c6c6cd",
+                      "on-background": "#1b1b1d",
+                      "warning-amber": "#F59E0B",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1b1b1d",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#303032",
+                      "surface-container": "#f0edef",
+                      "surface-container-low": "#f6f3f5",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed": "#fcdeb5",
+                      "surface-container-highest": "#e4e2e4",
+                      "surface-dim": "#dcd9db",
+                      "on-primary-container": "#7c839b",
+                      "surface-bright": "#fcf8fa",
+                      "outline": "#76777d",
+                      "on-primary-fixed": "#131b2e",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e4e2e4",
+                      "primary-fixed-dim": "#bec6e0",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-muted": "#F8FAFC",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#000000",
+                      "reasoning-blue": "#3B82F6",
+                      "primary-fixed": "#dae2fd",
+                      "border-subtle": "#E2E8F0",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-secondary-fixed-variant": "#930013",
+                      "surface-container-high": "#eae7e9",
+                      "on-tertiary-fixed-variant": "#574425",
+                      "secondary-container": "#da3437",
+                      "on-secondary-fixed": "#410004",
+                      "on-tertiary-fixed": "#271901",
+                      "on-tertiary-container": "#98805d",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#000000",
+                      "secondary-fixed": "#ffdad7",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "tertiary-container": "#271901",
+                      "primary-container": "#131b2e",
+                      "inverse-primary": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "stack-default": "1rem",
+                      "stack-compact": "0.5rem",
+                      "section-gap": "2rem",
+                      "margin-mobile": "1rem",
+                      "gutter": "1.5rem"
+              },
+              "fontFamily": {
+                      "body-base": [
+                              "Inter"
+                      ],
+                      "data-mono": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "metric-display": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-base": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "data-mono": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "metric-display": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-sm": [
+                              "13px",
+                              {
+                                      "lineHeight": "18px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base antialiased flex overflow-hidden h-screen w-screen relative">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 h-full w-[240px] z-40 flex flex-col py-6 px-4 hidden md:flex">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">RAYGO</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Autonomous Revenue</p>
+</div>
+</div>
+<ul class="flex flex-col gap-1 flex-grow overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-base text-body-base font-medium">Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-body-base text-body-base font-medium">Opportunities</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span class="font-body-base text-body-base font-medium">Experiments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+<span class="font-body-base text-body-base font-medium">AI Commerce</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-body-base text-body-base font-medium">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-body-base text-body-base font-medium">Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-body-base text-body-base font-medium">Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="smart_button">smart_button</span>
+<span class="font-body-base text-body-base font-medium">Agent Activity</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 rounded" href="#">
+<span class="material-symbols-outlined" data-icon="policy">policy</span>
+<span class="font-body-base text-body-base font-medium">Policies</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary-container text-on-primary-container font-semibold rounded-lg scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-body-base text-body-base">Audit Trail</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow md:ml-[240px] flex flex-col h-screen overflow-hidden bg-surface relative">
+<!-- Header area simplified -->
+<header class="px-8 py-6 border-b border-border-subtle bg-surface z-10 flex-shrink-0">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Audit Trail</h2>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Every consequential AI action is recorded and explainable.</p>
+</header>
+<div class="flex-grow overflow-y-auto p-8 bg-surface-muted relative">
+<div class="max-w-container-max mx-auto h-full">
+<!-- Filters & Actions Bar -->
+<div class="flex justify-between items-center mb-6">
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-sm" data-icon="search">search</span>
+<input class="pl-9 pr-4 py-2 bg-surface-container-lowest border border-border-subtle rounded text-body-sm font-body-sm text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64 shadow-sm" placeholder="Search logs..." type="text"/>
+</div>
+<button class="px-4 py-2 bg-surface-container-lowest border border-border-subtle rounded text-body-sm font-body-sm text-on-surface flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                            Filter
+                        </button>
+</div>
+<button class="px-4 py-2 bg-surface-container-lowest border border-border-subtle rounded text-body-sm font-body-sm text-on-surface flex items-center gap-2 hover:bg-surface-container-low transition-colors shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                        Export CSV
+                    </button>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface-container-lowest rounded-lg border border-border-subtle shadow-sm overflow-hidden flex flex-col h-[calc(100%-80px)]">
+<div class="overflow-x-auto flex-grow">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-muted sticky top-0 z-10 border-b border-border-subtle">
+<tr>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Timestamp</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Agent</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Action</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Reason</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Policy</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Approval</th>
+<th class="py-3 px-4 font-label-bold text-label-bold text-on-surface-variant whitespace-nowrap uppercase tracking-wider">Outcome</th>
+</tr>
+</thead>
+<tbody class="font-data-mono text-data-mono text-on-surface divide-y divide-border-subtle">
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3 px-4 text-on-surface-variant whitespace-nowrap">11:32:08.142</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue text-sm" data-icon="smart_toy">smart_toy</span>
+                                            Payment Agent
+                                        </div>
+</td>
+<td class="py-3 px-4 font-medium">Create Order</td>
+<td class="py-3 px-4 text-on-surface-variant truncate max-w-[200px]" title="Buyer confirmed intent in chat">Buyer confirmed</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-growth-green/10 text-growth-green text-xs font-medium">
+<span class="material-symbols-outlined text-[10px]" data-icon="check_circle">check_circle</span> Passed
+                                        </span>
+</td>
+<td class="py-3 px-4">Confirmed</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-xs font-medium border border-border-subtle">
+                                            Success
+                                        </span>
+</td>
+</tr>
+<tr class="bg-surface-container-low relative after:absolute after:inset-y-0 after:left-0 after:w-1 after:bg-primary cursor-pointer">
+<td class="py-3 px-4 text-on-surface-variant whitespace-nowrap">11:32:12.891</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue text-sm" data-icon="smart_toy">smart_toy</span>
+                                            Payment Agent
+                                        </div>
+</td>
+<td class="py-3 px-4 font-medium">Retry Payment</td>
+<td class="py-3 px-4 text-on-surface-variant truncate max-w-[200px]">Payment failed</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error/10 text-error text-xs font-medium">
+<span class="material-symbols-outlined text-[10px]" data-icon="block">block</span> Blocked
+                                        </span>
+</td>
+<td class="py-3 px-4 text-on-surface-variant">N/A</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-xs font-medium border border-border-subtle">
+                                            Prevented
+                                        </span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low cursor-pointer transition-colors">
+<td class="py-3 px-4 text-on-surface-variant whitespace-nowrap">11:35:45.021</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-reasoning-blue text-sm" data-icon="smart_toy">smart_toy</span>
+                                            Discount Agent
+                                        </div>
+</td>
+<td class="py-3 px-4 font-medium">Apply Discount</td>
+<td class="py-3 px-4 text-on-surface-variant truncate max-w-[200px]">Cart abandoned &gt; 2hrs</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-growth-green/10 text-growth-green text-xs font-medium">
+<span class="material-symbols-outlined text-[10px]" data-icon="check_circle">check_circle</span> Passed
+                                        </span>
+</td>
+<td class="py-3 px-4">Auto-Approved</td>
+<td class="py-3 px-4">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface text-xs font-medium border border-border-subtle">
+                                            Success
+                                        </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination footer -->
+<div class="px-4 py-3 border-t border-border-subtle bg-surface-container-lowest flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 3 of 1,204 entries</span>
+<div class="flex gap-1">
+<button class="p-1 rounded text-outline hover:bg-surface-container-low disabled:opacity-50"><span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span></button>
+<button class="p-1 rounded text-outline hover:bg-surface-container-low"><span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detail Drawer (Overlayed contextually) -->
+<div class="absolute inset-y-0 right-0 w-[480px] bg-surface-container-lowest border-l border-border-subtle shadow-2xl flex flex-col z-30 transform transition-transform duration-300 translate-x-0">
+<!-- Drawer Header -->
+<div class="px-6 py-5 border-b border-border-subtle flex justify-between items-center bg-surface-muted">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Log Details</h3>
+<p class="font-data-mono text-data-mono text-on-surface-variant mt-1">ID: evt_8f92a4b1c</p>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="flex-grow overflow-y-auto p-6 flex flex-col gap-6 font-body-base text-body-base">
+<!-- Summary Card -->
+<div class="bg-error/5 border border-error/20 rounded p-4">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-error" data-icon="block">block</span>
+<h4 class="font-label-bold text-label-bold uppercase text-error">Decision Summary</h4>
+</div>
+<p class="text-on-surface">Action <span class="font-data-mono font-medium">Retry Payment</span> was blocked by policy <span class="font-data-mono font-medium">Max_Retries_Exceeded</span>.</p>
+</div>
+<!-- Detail Grid -->
+<div class="grid grid-cols-2 gap-y-4 gap-x-4 border-b border-border-subtle pb-6">
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Agent</span>
+<div class="flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-reasoning-blue text-sm" data-icon="smart_toy">smart_toy</span> Payment Agent
+                        </div>
+</div>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Timestamp</span>
+<span class="font-data-mono text-on-surface">2023-10-27 11:32:12.891</span>
+</div>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Related Order</span>
+<a class="font-data-mono text-reasoning-blue hover:underline" href="#">ord_77492A</a>
+</div>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Action</span>
+<span class="font-data-mono font-medium text-on-surface">Retry Payment</span>
+</div>
+</div>
+<!-- Reasoning Timeline -->
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface-variant uppercase mb-4 tracking-wider">Execution Trace</h4>
+<div class="relative pl-6 border-l-2 border-reasoning-blue/30 space-y-6">
+<!-- Step 1 -->
+<div class="relative">
+<span class="absolute -left-[31px] bg-surface-container-lowest border-2 border-reasoning-blue w-4 h-4 rounded-full"></span>
+<h5 class="font-medium text-on-surface mb-1">Evidence Gathered</h5>
+<div class="bg-surface-muted p-3 rounded border border-border-subtle font-data-mono text-xs text-on-surface-variant space-y-1">
+<div><span class="text-outline">trigger:</span> "payment_failed_webhook"</div>
+<div><span class="text-outline">current_retries:</span> 3</div>
+<div><span class="text-outline">time_since_last:</span> "2m 14s"</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative">
+<span class="absolute -left-[31px] bg-surface-container-lowest border-2 border-error w-4 h-4 rounded-full"></span>
+<h5 class="font-medium text-on-surface mb-1 flex items-center gap-2">Policy Checks <span class="text-error text-xs bg-error/10 px-1.5 py-0.5 rounded font-label-bold uppercase">Failed</span></h5>
+<div class="bg-surface-muted p-3 rounded border border-error/20 font-data-mono text-xs text-on-surface-variant">
+                                Evaluated <span class="text-on-surface font-medium">Policy.Payment.MaxRetries</span> (Limit: 3).
+                                <br/>Current value (3) &gt;= Limit. Condition met to block.
+                            </div>
+</div>
+<!-- Step 3 -->
+<div class="relative">
+<span class="absolute -left-[31px] bg-surface-container-lowest border-2 border-outline-variant w-4 h-4 rounded-full"></span>
+<h5 class="font-medium text-on-surface mb-1">Execution Result</h5>
+<p class="text-on-surface-variant text-sm">Action blocked. System halted retry loop.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer -->
+<div class="p-4 border-t border-border-subtle bg-surface flex justify-end gap-3">
+<button class="px-4 py-2 font-body-base text-body-base font-medium rounded border border-primary text-primary hover:bg-surface-container-low transition-colors">View Order</button>
+<button class="px-4 py-2 font-body-base text-body-base font-medium rounded bg-primary text-on-primary hover:bg-primary/90 transition-colors">Acknowledge</button>
+</div>
+</div>
+</main>
+</body></html>

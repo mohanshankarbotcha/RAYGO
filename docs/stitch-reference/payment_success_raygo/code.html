@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Success - RAYGO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#45464d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-tint": "#565e74",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "growth-green": "#10B981",
+                        "secondary": "#b61722",
+                        "background": "#fcf8fa",
+                        "surface": "#fcf8fa",
+                        "outline-variant": "#c6c6cd",
+                        "on-background": "#1b1b1d",
+                        "warning-amber": "#F59E0B",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303032",
+                        "surface-container": "#f0edef",
+                        "surface-container-low": "#f6f3f5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-dim": "#dcd9db",
+                        "on-primary-container": "#7c839b",
+                        "surface-bright": "#fcf8fa",
+                        "outline": "#76777d",
+                        "on-primary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2e4",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-muted": "#F8FAFC",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#000000",
+                        "reasoning-blue": "#3B82F6",
+                        "primary-fixed": "#dae2fd",
+                        "border-subtle": "#E2E8F0",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-secondary-fixed-variant": "#930013",
+                        "surface-container-high": "#eae7e9",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "secondary-container": "#da3437",
+                        "on-secondary-fixed": "#410004",
+                        "on-tertiary-fixed": "#271901",
+                        "on-tertiary-container": "#98805d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#ffdad7",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "tertiary-container": "#271901",
+                        "primary-container": "#131b2e",
+                        "inverse-primary": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-default": "1rem",
+                        "stack-compact": "0.5rem",
+                        "section-gap": "2rem",
+                        "margin-mobile": "1rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "metric-display": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "metric-display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        .timeline-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface font-body-base flex flex-col md:flex-row font-body-base text-body-base">
+<!-- Payment Success is a Transactional/Success splash screen.
+         "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional: Login, Sign-up, Onboarding, Checkout, or "Success/Confirmation" splash screens."
+         Therefore, NO TopNavBar and NO SideNavBar will be rendered, maximizing the canvas focus on the success state.
+    -->
+<main class="flex-1 flex flex-col items-center justify-center p-6 md:p-12 w-full max-w-4xl mx-auto min-h-screen">
+<!-- Main Success Card -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded-xl p-8 w-full max-w-2xl shadow-sm relative overflow-hidden">
+<!-- decorative top border -->
+<div class="absolute top-0 left-0 w-full h-1 bg-growth-green"></div>
+<div class="text-center mb-8 flex flex-col items-center">
+<div class="w-16 h-16 rounded-full bg-growth-green/10 flex items-center justify-center mb-4 relative">
+<div class="absolute inset-0 rounded-full bg-growth-green/20 timeline-pulse"></div>
+<span class="material-symbols-outlined text-growth-green text-3xl filled">check_circle</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Payment Successful</h1>
+<p class="font-body-base text-body-base text-on-surface-variant">Your transaction has been processed successfully.</p>
+</div>
+<!-- Core Details Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-muted border border-border-subtle rounded-lg p-4">
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Amount Paid</span>
+<span class="block font-metric-display text-metric-display text-primary">₹68,499</span>
+</div>
+<div class="bg-surface-muted border border-border-subtle rounded-lg p-4 flex flex-col justify-center">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Order ID</span>
+<span class="font-data-mono text-data-mono text-on-surface">#RGO-10482</span>
+</div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Status</span>
+<span class="inline-flex items-center gap-1 text-growth-green bg-growth-green/10 px-2 py-0.5 rounded font-label-bold text-label-bold">
+<span class="material-symbols-outlined text-[14px]">check</span> Successful
+                        </span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Environment</span>
+<span class="font-data-mono text-data-mono text-warning-amber flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">science</span> Test Mode
+                        </span>
+</div>
+</div>
+</div>
+<!-- Transaction Timeline -->
+<div class="border border-border-subtle rounded-lg p-6 mb-8 relative">
+<h2 class="font-headline-md text-headline-md mb-6 border-b border-border-subtle pb-4">Transaction Timeline</h2>
+<div class="relative pl-6 space-y-6">
+<!-- Vertical Line connecting steps -->
+<div class="absolute left-[11px] top-2 bottom-2 w-[2px] bg-border-subtle"></div>
+<!-- Step 1 -->
+<div class="relative flex items-start">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-growth-green flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-growth-green text-[14px] filled">check</span>
+</div>
+<div class="ml-4">
+<p class="font-data-mono text-data-mono text-on-surface font-semibold">Intent received</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">System registered user checkout intent.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-growth-green flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-growth-green text-[14px] filled">check</span>
+</div>
+<div class="ml-4">
+<p class="font-data-mono text-data-mono text-on-surface font-semibold">Products selected</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">AI verified cart contents and availability.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-growth-green flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-growth-green text-[14px] filled">check</span>
+</div>
+<div class="ml-4">
+<p class="font-data-mono text-data-mono text-on-surface font-semibold">Order created</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Draft order #RGO-10482 generated in system.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-growth-green flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-growth-green text-[14px] filled">check</span>
+</div>
+<div class="ml-4">
+<p class="font-data-mono text-data-mono text-on-surface font-semibold">Payment authorized</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Gateway cleared transaction amount.</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative flex items-start">
+<div class="absolute -left-6 w-6 h-6 rounded-full bg-growth-green border-2 border-growth-green flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-surface-container-lowest text-[14px] filled">check</span>
+</div>
+<div class="ml-4">
+<p class="font-data-mono text-data-mono text-on-surface font-semibold">Order confirmed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Transaction finalized and recorded.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Commerce Summary Layer -->
+<div class="bg-reasoning-blue/5 border border-reasoning-blue/20 rounded-lg p-5 mb-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-reasoning-blue">smart_toy</span>
+<h3 class="font-headline-md text-headline-md text-primary">AI Commerce Summary</h3>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Decision Time</span>
+<span class="block font-data-mono text-data-mono text-on-surface">2.4 sec</span>
+</div>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Recommendation Confidence</span>
+<span class="block font-data-mono text-data-mono text-on-surface flex items-center gap-1">
+                            92% <span class="material-symbols-outlined text-growth-green text-[14px]">trending_up</span>
+</span>
+</div>
+<div>
+<span class="block font-label-bold text-label-bold text-on-surface-variant uppercase mb-1">Action</span>
+<span class="block font-data-mono text-data-mono text-on-surface">Checkout Completed</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex justify-center">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3 rounded flex items-center gap-2 hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">dashboard</span>
+                    Return to Merchant Dashboard
+                </button>
+</div>
+</div>
+</main>
+</body></html>

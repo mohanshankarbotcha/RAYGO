@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Checkout - RAYGO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#45464d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-tint": "#565e74",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "growth-green": "#10B981",
+                        "secondary": "#b61722",
+                        "background": "#fcf8fa",
+                        "surface": "#fcf8fa",
+                        "outline-variant": "#c6c6cd",
+                        "on-background": "#1b1b1d",
+                        "warning-amber": "#F59E0B",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1b1d",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303032",
+                        "surface-container": "#f0edef",
+                        "surface-container-low": "#f6f3f5",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#fcdeb5",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-dim": "#dcd9db",
+                        "on-primary-container": "#7c839b",
+                        "surface-bright": "#fcf8fa",
+                        "outline": "#76777d",
+                        "on-primary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e4e2e4",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-muted": "#F8FAFC",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#000000",
+                        "reasoning-blue": "#3B82F6",
+                        "primary-fixed": "#dae2fd",
+                        "border-subtle": "#E2E8F0",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-secondary-fixed-variant": "#930013",
+                        "surface-container-high": "#eae7e9",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "secondary-container": "#da3437",
+                        "on-secondary-fixed": "#410004",
+                        "on-tertiary-fixed": "#271901",
+                        "on-tertiary-container": "#98805d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#000000",
+                        "secondary-fixed": "#ffdad7",
+                        "secondary-fixed-dim": "#ffb3ad",
+                        "tertiary-container": "#271901",
+                        "primary-container": "#131b2e",
+                        "inverse-primary": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "stack-default": "1rem",
+                        "stack-compact": "0.5rem",
+                        "section-gap": "2rem",
+                        "margin-mobile": "1rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "data-mono": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "metric-display": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-base": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-mono": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "metric-display": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "headline-md": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-base min-h-screen antialiased flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Linear/Transactional intent => Navigation shell suppressed -->
+<!-- Main Content Canvas -->
+<main class="flex-1 max-w-container-max mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 flex flex-col items-center">
+<header class="w-full max-w-3xl mb-8 flex items-center justify-between border-b border-border-subtle pb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary">Review Purchase</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                    Secure Checkout Process
+                </p>
+</div>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-body-sm text-body-sm font-medium border border-border-subtle rounded px-3 py-1.5 hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined text-[16px]">close</span>
+                Cancel
+            </a>
+</header>
+<div class="w-full max-w-3xl grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column: Details & Reasoning -->
+<div class="lg:col-span-2 space-y-6">
+<!-- Buyer Request Context -->
+<section class="bg-surface-container-lowest border border-border-subtle rounded-lg p-5 shadow-sm">
+<div class="flex items-start gap-3 mb-3">
+<div class="p-1.5 bg-primary-fixed text-primary rounded shrink-0">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div>
+<h2 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider mb-1">Buyer Request</h2>
+<p class="font-body-base text-body-base text-on-surface">"I need a laptop setup for AI development and college under ₹70,000."</p>
+</div>
+</div>
+</section>
+<!-- AI Reasoning Layer -->
+<section class="bg-reasoning-blue/5 border border-reasoning-blue/20 rounded-lg p-5 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-reasoning-blue"></div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-reasoning-blue text-[20px]" data-weight="fill">smart_toy</span>
+<h2 class="font-headline-md text-headline-md text-primary">Why RAYGO prepared this purchase</h2>
+</div>
+<ul class="space-y-4 relative before:absolute before:inset-y-0 before:left-[11px] before:w-[1.5px] before:bg-reasoning-blue/20 ml-2">
+<li class="relative pl-6">
+<div class="absolute left-[7px] top-1.5 w-2 h-2 rounded-full bg-reasoning-blue shadow-[0_0_0_4px_rgba(59,130,246,0.1)]"></div>
+<h3 class="font-label-bold text-label-bold text-primary mb-0.5">Budget Optimized</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Total basket is ₹68,499, safely under the ₹70,000 limit with an applied bundle discount.</p>
+</li>
+<li class="relative pl-6">
+<div class="absolute left-[7px] top-1.5 w-2 h-2 rounded-full bg-reasoning-blue shadow-[0_0_0_4px_rgba(59,130,246,0.1)]"></div>
+<h3 class="font-label-bold text-label-bold text-primary mb-0.5">Performance Matched</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ProBook 14 selected for sufficient compute power for entry-level AI development and college tasks.</p>
+</li>
+<li class="relative pl-6">
+<div class="absolute left-[7px] top-1.5 w-2 h-2 rounded-full bg-reasoning-blue shadow-[0_0_0_4px_rgba(59,130,246,0.1)]"></div>
+<h3 class="font-label-bold text-label-bold text-primary mb-0.5">Stock &amp; Price Verified</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All items are currently in stock. Pricing verified across authorized distributors via AI Commerce support.</p>
+</li>
+</ul>
+</section>
+<!-- Product List -->
+<section class="bg-surface-container-lowest border border-border-subtle rounded-lg shadow-sm">
+<div class="px-5 py-4 border-b border-border-subtle bg-surface-muted rounded-t-lg">
+<h2 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">Selected Products</h2>
+</div>
+<div class="divide-y divide-border-subtle">
+<div class="p-5 flex items-center justify-between hover:bg-surface-muted transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded border border-outline-variant">
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+</div>
+<div>
+<h3 class="font-body-base text-body-base font-medium text-primary">ProBook 14</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<div class="font-data-mono text-data-mono text-primary text-right">
+                                ₹62,999
+                            </div>
+</div>
+<div class="p-5 flex items-center justify-between hover:bg-surface-muted transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded border border-outline-variant">
+<span class="material-symbols-outlined text-outline">dock</span>
+</div>
+<div>
+<h3 class="font-body-base text-body-base font-medium text-primary">USB-C Dock</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<div class="font-data-mono text-data-mono text-primary text-right">
+                                ₹4,999
+                            </div>
+</div>
+<div class="p-5 flex items-center justify-between hover:bg-surface-muted transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded border border-outline-variant">
+<span class="material-symbols-outlined text-outline">aod</span>
+</div>
+<div>
+<h3 class="font-body-base text-body-base font-medium text-primary">Laptop Stand</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<div class="font-data-mono text-data-mono text-primary text-right">
+                                ₹1,799
+                            </div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary & Authorization -->
+<div class="lg:col-span-1 space-y-6">
+<section class="bg-surface-container-lowest border border-border-subtle rounded-lg shadow-sm sticky top-8">
+<div class="p-5">
+<h2 class="font-headline-md text-headline-md text-primary mb-4 border-b border-border-subtle pb-3">Order Summary</h2>
+<div class="space-y-3 font-body-sm text-body-sm mb-4 border-b border-border-subtle pb-4">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Subtotal</span>
+<span class="font-data-mono text-data-mono text-primary">₹69,797</span>
+</div>
+<div class="flex justify-between text-growth-green">
+<span>Bundle discount</span>
+<span class="font-data-mono text-data-mono">- ₹1,298</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Taxes &amp; Fees</span>
+<span class="font-data-mono text-data-mono text-primary">Calculated</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-6">
+<span class="font-label-bold text-label-bold text-primary uppercase">Total</span>
+<span class="font-metric-display text-metric-display text-primary">₹68,499</span>
+</div>
+<!-- Authorization Gate Panel -->
+<div class="bg-surface-container rounded p-4 mb-5 border border-outline-variant border-l-4 border-l-warning-amber">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-warning-amber text-[20px] shrink-0 mt-0.5" data-weight="fill">warning</span>
+<div>
+<h3 class="font-label-bold text-label-bold text-primary mb-1">Authorization Gate</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Purchase authorization required. RAYGO will not execute payment until you confirm this purchase.</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-body-base text-body-base font-medium py-3 px-4 rounded transition-colors flex items-center justify-center gap-2 group shadow-sm active:scale-[0.98]">
+                            Confirm &amp; Pay
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-4 flex items-center justify-center gap-1.5 text-on-surface-variant/70 font-label-bold text-[10px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+                            Razorpay Test Mode
+                        </div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

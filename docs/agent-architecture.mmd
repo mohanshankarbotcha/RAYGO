@@ -1,0 +1,43 @@
+flowchart TD
+    subgraph Inbound ["Merchant / Buyer Inbound Trigger"]
+        A[Merchant Query / Natural Language Request]
+        B[AI Buyer Purchasing Intent]
+        C[Background Synergies Scanner]
+    end
+
+    subgraph Orchestration ["Coordinator & Intent Classifier"]
+        D[Raygo Coordinator\n(Deterministic Fast-Path + Gemini LLM)]
+        D -->|Intent: Opportunities| E[Revenue Intelligence Agent]
+        D -->|Intent: Growth| F[Growth Strategist Agent]
+        D -->|Intent: Experiment| G[Experiment Agent]
+        D -->|Intent: Catalog/Buyer| H[AI Commerce Agent]
+        D -->|Intent: Payment| I[Payment Recovery Agent]
+        D -->|Intent: Copilot Q&A| J[Merchant Copilot Service]
+    end
+
+    subgraph DomainTools ["Domain Execution Tools (Allow-List)"]
+        K[Catalog Semantic Matcher]
+        L[Dynamic Bundle Builder]
+        M[Bayesian Lift Calculator]
+        N[Razorpay Order & Verify Tool]
+    end
+
+    subgraph SafetyGate ["Zero Direct AI Execution Firewall"]
+        O[Policy Guard\n• Max Discount <= 20%\n• Min Margin >= 25%\n• Automatic Retry: BLOCKED]
+        P[Approval Gateway\n• Explicit Merchant Authorization Required for Financial / Consequential Actions]
+    end
+
+    subgraph FinalState ["Execution & Audit Ledger"]
+        Q[(Runtime Repository State)]
+        R[Audit Event & Correlation ID Ledger]
+    end
+
+    Inbound --> Orchestration
+    E & F & G & H & I & J --> DomainTools
+    DomainTools --> O
+    O -->|Requires Approval| P
+    O -->|Passed Safe Action| Q
+    P -->|Approved by Human| Q
+    O -->|Policy Blocked| R
+    P -->|Approval Decision| R
+    Q --> R
