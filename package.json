@@ -3,10 +3,25 @@
   "version": "1.0.0",
   "private": true,
   "description": "RAYGO - Autonomous Revenue Intelligence & AI-to-AI Autonomous Commerce Engine",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "npm --prefix apps/web run dev",
     "build": "npm --prefix apps/web run build",
     "start": "npm --prefix apps/web start",
     "lint": "npm --prefix apps/web run lint"
+  },
+  "dependencies": {
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
   }
 }
