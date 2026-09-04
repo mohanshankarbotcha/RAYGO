@@ -1,5 +1,7 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import OnboardingPage from "./onboarding/page";
 
 export default function RootPage() {
-  redirect("/onboarding");
+  return <OnboardingPage />;
 }
